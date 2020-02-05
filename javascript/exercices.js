@@ -11,6 +11,19 @@ const anagrammes = (stringA, stringB) => {
    * anagrams('Hi there', 'Bye there') === false
    */
 
+
+
+let tabA = stringA.toUpperCase().replace(/[a-zA-Z]/g, "").split("").sort().join();
+let tabB = stringB.toUpperCase().replace(/[a-zA-Z]/g, "").split("").sort().join();
+
+
+
+return tabA === tabB;
+
+
+
+
+
 };
 
 
@@ -32,6 +45,39 @@ class Stack {
  * s.pop(); // returns 2
  * s.peek(); // returns 1
  */
+ 
+constructor(){
+  
+  this.tab=[];
+  
+}
+ 
+  push(val){
+    
+    this.tab[this.tab.length] = val;
+    
+    
+    
+  }
+
+  pop(){
+    
+    let a = this.tab[this.tab.length-1];
+    this.tab.splice(this.tab.length-1, 1);
+    return a;
+    
+  }
+  
+  peek(){
+    
+   return this.tab[0];
+    
+  }
+ 
+ 
+ 
+ 
+ 
 };
 
 
